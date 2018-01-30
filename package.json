@@ -1,0 +1,38 @@
+{
+  "name": "fcc-booktrade",
+  "version": "0.0.1",
+  "description": "a book trading app",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shibatas/fcc-booktrade.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "react"
+  ],
+  "author": "Shohei Shibata",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shibatas/fcc-booktrade/issues"
+  },
+  "homepage": "https://github.com/shibatas/fcc-booktrade#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^5.0.0",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "mongoose": "^5.0.2",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.11"
+  }
+}
