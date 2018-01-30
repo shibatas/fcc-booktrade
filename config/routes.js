@@ -1,17 +1,13 @@
+const path = require('path');
+const express = require('express');
 const User = require('../lib/users');
 const Book = require('../lib/books');
 
 module.exports = function (app, passport) {
-    app.route('/')
-        .get(function(req, res) {
-            console.log(req.query);
-            res.send('api root get');
-        })
-        .post(function(req, res) {
-            console.log(req.body);
-            res.send('api post');
-        });
         
+    app.route('/')
+        .get(express.static(path.resolve('doc')));
+
     app.route('/login')
         .post(passport.authenticate('local', {
             successRedirect: '/',

@@ -4,6 +4,7 @@ const passport = require('passport');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+const path = require('path');
 const routes = require('./config/routes');
 
 require('dotenv').load();
@@ -28,6 +29,8 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use(express.static(path.resolve('doc')));
 
 app.use('/*', function(req, res, next) {
     console.log('auth status', req.isAuthenticated(), req.user);
