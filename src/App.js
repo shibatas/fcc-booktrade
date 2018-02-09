@@ -1,20 +1,40 @@
 import React, { Component } from 'react';
 import './App.css';
 
+// dev
+import books from './books';
+
 class App extends Component {
   render() {
+
+    
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">The Book Trade Club</h1>
-          <h3>...needs an original name</h3>
+          <h1 className="App-title">Swap-a-Book!</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div className='book-shelf-container'>
+          {books.map((item, i) => {
+            return (
+              <div key={i} className='book-card-container'>
+                <p>{item.title}</p>
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   }
 }
 
 export default App;
+
+
+/*const BooksSchema = new Schema({
+    title: String,
+    author: String,
+    isbn: String,
+    subject: [String],
+    offeredBy: [String]
+});
+*/

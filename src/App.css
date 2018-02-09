@@ -12,6 +12,16 @@
   font-size: 1.5em;
 }
 
-.App-intro {
-  font-size: large;
+.book-shelf-container {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.book-card-container {
+  background-color: #eee;
+  width: 200px;
+  height: 300px;
 }
