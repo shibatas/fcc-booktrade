@@ -1,18 +1,18 @@
 const books = [
   {
-      title: 'title1',
-      author: 'author1',
-      isbn: '12345',
-      subject: ['cat1', 'cat2'],
+      googleId: '24a_o-VJvGsC',
       offeredBy: ['user1', 'user2']
   },  
   {
-      title: 'title2',
-      author: 'author2',
-      isbn: '23456',
-      subject: ['cat2', 'cat3'],
+      googleId: '_M8lDwAAQBAJ',
+      offeredBy: ['user2']
+  },    
+  {
+      googleId: '-X2j44h3d8IC',
       offeredBy: ['user2']
   },  
+
+  
 ];
 
 module.exports = books;

@@ -21,7 +21,40 @@
 }
 
 .book-card-container {
-  background-color: #eee;
-  width: 200px;
-  height: 300px;
+  position: relative;
+  background-color: transparent;
+  box-shadow: 5px 5px 8px #888;
+}
+
+.book-image {
+  margin: none;
+  display: block;
+}
+
+.book-info {
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+  height: 0;
+  width: 100%;
+  background-color: rgba(192, 192, 192, 0.8);
+  transition: height, 0.3s;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.book-card-container:hover .book-info {
+  height: 100%;
+}
+
+.book-info-item {
+  width: 70%;
+  height: auto;
+  background-color: tomato;
+  text-align: center;
+  color: #fff;
+  white-space: nowrap;
 }

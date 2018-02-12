@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import BookCard from './book-card';
+
 // dev
 import books from './books';
+// eventually, hide api url in .env file
+const apiurl = 'https://www.googleapis.com/books/v1/volumes';
 
 class App extends Component {
   render() {
@@ -16,9 +20,7 @@ class App extends Component {
         <div className='book-shelf-container'>
           {books.map((item, i) => {
             return (
-              <div key={i} className='book-card-container'>
-                <p>{item.title}</p>
-              </div>
+              <BookCard key={i} {...item}/>
             );
           })}
         </div>
@@ -28,13 +30,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-/*const BooksSchema = new Schema({
-    title: String,
-    author: String,
-    isbn: String,
-    subject: [String],
-    offeredBy: [String]
-});
-*/
