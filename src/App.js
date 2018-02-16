@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
+import './css/App.css';
 
 import BookCard from './book-card';
+import Modal from './modal';
 
 // dev
 import books from './books';
@@ -9,6 +10,24 @@ import books from './books';
 const apiurl = 'https://www.googleapis.com/books/v1/volumes';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      modal: false,
+      bookInfo: null
+    }
+  }
+  toggleModal = () => {
+    this.setState({
+      modal: !this.state.modal
+    });
+  }
+  updateModalContents = (data) => {
+    console.log('modal data', data);
+    this.setState({
+      bookInfo: data
+    })
+  }
   render() {
 
     
@@ -20,10 +39,11 @@ class App extends Component {
         <div className='book-shelf-container'>
           {books.map((item, i) => {
             return (
-              <BookCard key={i} {...item}/>
+              <BookCard key={i} {...item} toggleModal={this.toggleModal} sendToModal={this.updateModalContents}/>
             );
           })}
         </div>
+        <Modal show={this.state.modal} data={this.state.bookInfo} toggleModal={this.toggleModal}/>
       </div>
     );
   }

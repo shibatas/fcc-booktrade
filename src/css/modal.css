@@ -1,0 +1,27 @@
+.modal-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #888;
+    opacity: 0.5;
+    display: none;
+}
+.modal-bg.show {
+    display: block;
+}
+
+.modal-card {
+    position: absolute;
+    top: 20vh;
+    left: 20vw;
+    width: 60vw;
+    height: 60vh;
+    background-color: #eee;
+    border-radius: 5px;
+    display: none;
+}
+.modal-card.show {
+    display: block;
+}
