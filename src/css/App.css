@@ -50,15 +50,3 @@
 .book-card-container:hover .book-info {
   height: 100%;
 }
-
-.book-info-item {
-  width: 70%;
-  height: auto;
-  background-color: tomato;
-  text-align: center;
-  color: #fff;
-  white-space: nowrap;
-}
-.book-info-item:hover {
-  cursor: pointer;
-}

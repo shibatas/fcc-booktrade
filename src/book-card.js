@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './css/App.css';
 
+import Btn1 from './btn1';
+
 class BookCard extends Component {
     constructor(props) {
         super(props);
@@ -26,6 +28,7 @@ class BookCard extends Component {
         });
     }
     handleClick = (e) => {
+        console.log('handle click', e.target.id);
         this.props.toggleModal();
         this.props.sendToModal(this.state.data);
     }
@@ -39,12 +42,9 @@ class BookCard extends Component {
                     alt='Cover image not available'
                 />
                 <div className='book-info'>
-                    <div className='book-info-item' onClick={this.handleClick} >
-                        <p style={{lineHeight:'50px'}}>See Info</p>
+                    <div style={{width: '70%', height: '70px'}} onClick={this.handleClick}>
+                        <Btn1 id='book-info' text='View Details' width='100%' height='100%' onClick={this.handleClick} />
                     </div>
-                    {/*<div className='book-info-item'onClick={this.handleClick} >
-                    <p style={{lineHeight:'50px'}}>Make an Offer</p>
-                    </div>*/}
                 </div>
             </div>
         );

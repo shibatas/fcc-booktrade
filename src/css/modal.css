@@ -23,5 +23,17 @@
     display: none;
 }
 .modal-card.show {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.modal-book-details {
+    width: 90%;
+}
+
+.modal-btns {
+    display: flex;
+    justify-content: center;
 }
