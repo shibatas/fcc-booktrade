@@ -3,6 +3,7 @@ import axios from 'axios';
 import './css/App.css';
 
 import Btn1 from './btn1';
+import BookSearch from './book-search';
 
 class AddBook extends Component {
     constructor(props) {
@@ -23,7 +24,7 @@ class AddBook extends Component {
                 </div>
                 <div className={'modal-card' + show}>
                     <h1>Add a book</h1>
-                    <p>Search</p>
+                    <BookSearch />
                 </div>
             </div>
         );
