@@ -6,6 +6,8 @@
   background-color: #222;
   padding: 20px;
   color: white;
+  display: flex;
+  justify-content: space-between;
 }
 
 .App-title {
@@ -49,4 +51,18 @@
 
 .book-card-container:hover .book-info {
   height: 100%;
+}
+
+.book-card-container img {
+  min-height: 200px;
+}
+
+.nav li {
+  display: inline-block;
+  list-style-type: none;
+  margin-left: 20px;
+}
+
+.nav li:hover {
+  cursor: pointer;
 }

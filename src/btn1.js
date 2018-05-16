@@ -3,7 +3,6 @@ import './css/btn.css';
 
 class Btn1 extends Component {
     render() {
-        console.log('btn1', this.props);
         return (
             <button 
                 id={this.props.id} 

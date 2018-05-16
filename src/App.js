@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './css/App.css';
 
+import AddBook from './add-book';
 import BookCard from './book-card';
-import Modal from './modal';
+import BookDetail from './book-detail';
 
 // dev
 import books from './books';
@@ -13,17 +14,32 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: false,
+      bookDetail: false,
+      addBook: false,
       bookInfo: null
     }
   }
-  toggleModal = () => {
-    this.setState({
-      modal: !this.state.modal
-    });
+  addBook = () => {
+    console.log('add book');
+    this.toggleModal('addBook');
+  }
+  toggleModal = (id) => {
+    console.log('toggle modal:', id);
+    switch (id) {
+      case 'bookDetail':
+        this.setState({
+          bookDetail: !this.state.bookDetail
+        });
+        break;
+      case 'addBook':
+        this.setState({
+          addBook: !this.state.addBook
+        });
+        break;
+      default:
+    }
   }
   updateModalContents = (data) => {
-    console.log('modal data', data);
     this.setState({
       bookInfo: data
     })
@@ -34,7 +50,11 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Swap-a-Book!</h1>
+          <h1 className="App-title">Book Trade</h1>
+          <ul className="nav">
+            <li onClick={this.addBook}>Add a book</li>
+            <li>Login</li>
+          </ul>
         </header>
         <div className='book-shelf-container'>
           {books.map((item, i) => {
@@ -43,7 +63,8 @@ class App extends Component {
             );
           })}
         </div>
-        <Modal show={this.state.modal} data={this.state.bookInfo} toggleModal={this.toggleModal}/>
+        <AddBook show={this.state.addBook} toggleModal={this.toggleModal}/>
+        <BookDetail show={this.state.bookDetail} data={this.state.bookInfo} toggleModal={this.toggleModal}/>
       </div>
     );
   }

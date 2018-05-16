@@ -8,6 +8,7 @@ class BookCard extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            title: null,
             data: null,
             image: null
         }
@@ -22,6 +23,7 @@ class BookCard extends Component {
         .then(res => {
             console.log('get book', res);
             this.setState({
+                title: res.data.volumeInfo.title,
                 data: res.data.volumeInfo,
                 image: res.data.volumeInfo.imageLinks.small
             });
@@ -29,7 +31,7 @@ class BookCard extends Component {
     }
     handleClick = (e) => {
         console.log('handle click', e.target.id);
-        this.props.toggleModal();
+        this.props.toggleModal('bookDetail');
         this.props.sendToModal(this.state.data);
     }
     render() {
@@ -39,7 +41,7 @@ class BookCard extends Component {
                     className='book-image' 
                     src={this.state.image} 
                     width='200px' 
-                    alt='Cover image not available'
+                    alt={this.state.title || 'title'}
                 />
                 <div className='book-info'>
                     <div style={{width: '70%', height: '70px'}} onClick={this.handleClick}>
