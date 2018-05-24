@@ -39,7 +39,7 @@ class BookSearch extends Component {
                     {(this.state.data) ? (
                         this.state.data.map((item, i) => {
                             if (i < 5) {
-                                return (<p><i>{item.title}</i>{' by ' + item.authors[0]}</p>);
+                                return (<p><i>{item.title}</i>{' by ' + item.authors}</p>);
                             }
                         })
                     ) : (null)}
